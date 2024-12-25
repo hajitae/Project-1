@@ -2,3 +2,15 @@
     display: flex;
     background-color: aqua;
 }
+
+.calendar-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.calendar {
+    flex-grow: 1;
+    max-width: 100%;
+}
