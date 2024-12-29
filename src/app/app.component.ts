@@ -8,16 +8,18 @@ import { FullCalendarModule } from '@fullcalendar/angular';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  standalone: true,
   imports: [FullCalendarModule]
 })
 export class AppComponent {
   name = 'Sam';
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',
+    height: '100%',
     plugins: [dayGridPlugin, interactionPlugin],
     dateClick: (arg: DateClickArg) => this.handleDateClick(arg),
     events: [
-      { title: 'event 1', date: '2019-04-01' },
+      { title: 'event 1', date: '2024-12-29' },
       { title: 'event 2', date: '2019-04-02' }
     ]
   };
