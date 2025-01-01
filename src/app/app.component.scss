@@ -3,11 +3,21 @@
     background-color: aqua;
     height: 60px;
 }
+.welcome-wrapper {
+    background-color: magenta;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome {
+    justify-content: center;
+    background-color: yellow;
+}
 
 .calendar-container {
     margin-top: 20px;
     height: calc(100vh - 60px);
     position: fixed;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
 }

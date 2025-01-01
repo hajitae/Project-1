@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
+import { CalendarOptions, EventClickArg } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'
 import { FullCalendarModule } from '@fullcalendar/angular';
@@ -18,6 +18,7 @@ export class AppComponent {
     height: '100%',
     plugins: [dayGridPlugin, interactionPlugin],
     dateClick: (arg: DateClickArg) => this.handleDateClick(arg),
+    eventClick: (arg: EventClickArg) => this.handleEventClick(arg),
     events: [
       { title: 'event 1', date: '2024-12-29' },
       { title: 'event 2', date: '2019-04-02' }
@@ -26,7 +27,11 @@ export class AppComponent {
 
   handleDateClick(arg: DateClickArg): void {
     alert(`Date clicked: ${arg.dateStr}`);
-  }
+  };
+
+  handleEventClick(arg: EventClickArg): void {
+    alert('Event: ' + arg.event.title + "\nView: " + arg.view.type);
+  };
 }
 
 
